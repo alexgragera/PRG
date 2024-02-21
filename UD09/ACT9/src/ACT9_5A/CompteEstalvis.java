@@ -17,7 +17,7 @@ public class CompteEstalvis extends ProducteBancari {
     }
     
     @Override
-    double calculaRemuneracio() {
+    public double calculaRemuneracio() {
         double remuneracio = -(this.comisMantCompte);
         for (Tarjeta t : this.tarjetes) {
             remuneracio -= t.comisUs;
