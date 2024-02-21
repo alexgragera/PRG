@@ -21,7 +21,8 @@ public class Persona {
     }
     
     public double calculaProducte(){
-        return telefon.getPreu();
+        return (telefon.getPreu() - telefon.calculaDescompte()) + (portatil.getPreu() - portatil.calculaDescompte()) +
+                (televisor.getPreu()- televisor.calculaDescompte() );
     }
     
     @Override
