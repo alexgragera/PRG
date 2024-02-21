@@ -1,5 +1,7 @@
 package ACT9_6A;
 
+import ACT9_6B.Televisor;
+
 /**
  *
  * @author winadmin
