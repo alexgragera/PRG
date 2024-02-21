@@ -2,26 +2,20 @@ package ACT9_6A;
 
 /**
  *
- * @author alexg
+ * @author winadmin
  */
-public class Portatil extends Producte{
-
+public class Portatil extends Producte {
     public Portatil(String nom, double preu, double consumEnergetic, int garantiaMesos, int midaPantalla) {
         super(nom, preu, consumEnergetic, garantiaMesos, midaPantalla);
     }
-    
+
     @Override
     public double calculaDescompte() {
-        if (getConsumEnergetic() > 20) {
-            return getPreu() * 0.15;
-        } else if (getConsumEnergetic() <= 20) {
-            return getPreu() + 0.1;
-        }
-        return 0;
+        return (getConsumEnergetic() > 20) ? 0.15 * getPreu() : 0.10 * getPreu();
     }
 
     @Override
     public String toString() {
-        return "Nom: " + getNom() + ", Preu: " + getPreu() + ", Consumo Energetico: " + getConsumEnergetic() + ", Garantia Mesos:" + getGarantiaMesos() + ", Mida Pantalla: " + getMidaPantalla();
+        return "Portàtil {" + super.toString() + "} Preu: " + super.getPreu() + " " + this.calculaDescompte();
     }
 }

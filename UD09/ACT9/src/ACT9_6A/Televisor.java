@@ -2,26 +2,20 @@ package ACT9_6A;
 
 /**
  *
- * @author alexg
+ * @author winadmin
  */
-public class Televisor extends Producte{
-
+public class Televisor extends Producte {
     public Televisor(String nom, double preu, double consumEnergetic, int garantiaMesos, int midaPantalla) {
         super(nom, preu, consumEnergetic, garantiaMesos, midaPantalla);
-    }
-    
+    } 
+
     @Override
     public double calculaDescompte() {
-        if (getMidaPantalla() > 40) {
-            return getPreu() * 0.12;
-        } else if (getMidaPantalla() <= 40) {
-            return getPreu() + 0.08;
-        }
-        return 0;
+        return (getMidaPantalla() > 40) ? 0.12 * getPreu() : 0.08 * getPreu();
     }
 
     @Override
     public String toString() {
-        return "Nom: " + getNom() + ", Preu: " + getPreu() + ", Consumo Energetico: " + getConsumEnergetic() + ", Garantia Mesos:" + getGarantiaMesos() + ", Mida Pantalla: " + getMidaPantalla();
+        return "Televisor {" + super.toString() + "} Preu: " + super.getPreu() + " " + this.calculaDescompte();
     }
 }

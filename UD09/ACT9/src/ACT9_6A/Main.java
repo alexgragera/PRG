@@ -2,24 +2,17 @@ package ACT9_6A;
 
 /**
  *
- * @author alexg
+ * @author winadmin
  */
 public class Main {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
+        Telefon telefon = new Telefon("iPhone", 68.9, 15.0, 8, 5);
+        Portatil portatil = new Portatil("Dell XPS", 56.0, 18.0, 12, 15);
+        Televisor televisor = new Televisor("Samsung 4K", 25.0, 30.0, 36, 55);
+
+        Client client = new Client("Maria", "Gomez", telefon, portatil, televisor);
+
+        System.out.println(client.toString());
         
-        Telefon t = new Telefon("Iphone13",50.99,20,6,40);
-        Portatil p = new Portatil("Pavilion",1000.99,55,6,80);
-        Televisor tv = new Televisor("LG",50.99,20,6,40);
-        
-        Persona persona = new Persona("Pedro","Gordo",t,p,tv);
-        
-        double descuento = t.calculaDescompte() + p.calculaDescompte() + tv.calculaDescompte();
-        System.out.println(persona.toString());
-        System.out.println("descuento total: " + Math.round(descuento));
     }
-    
 }
