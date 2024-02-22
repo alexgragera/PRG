@@ -1,15 +1,14 @@
 package ACT9_6A;
 
-import ACT9_6B.Producte;
-
 /**
  *
  * @author winadmin
  */
 public class Televisor extends Producte {
+
     public Televisor(String nom, double preu, double consumEnergetic, int garantiaMesos, int midaPantalla) {
         super(nom, preu, consumEnergetic, garantiaMesos, midaPantalla);
-    } 
+    }
 
     @Override
     public double calculaDescompte() {

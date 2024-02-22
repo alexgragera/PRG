@@ -1,12 +1,11 @@
 package ACT9_6A;
 
-import ACT9_6B.Producte;
-
 /**
  *
  * @author winadmin
  */
 public class Portatil extends Producte {
+
     public Portatil(String nom, double preu, double consumEnergetic, int garantiaMesos, int midaPantalla) {
         super(nom, preu, consumEnergetic, garantiaMesos, midaPantalla);
     }

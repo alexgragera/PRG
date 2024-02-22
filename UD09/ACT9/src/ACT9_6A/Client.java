@@ -1,12 +1,11 @@
 package ACT9_6A;
 
-import ACT9_6B.Televisor;
-
 /**
  *
  * @author winadmin
  */
 public class Client {
+
     private String nom;
     private String cognom;
     private Telefon telefon;
@@ -42,11 +41,10 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client {" + "Nom: " + this.nom + ", Cognom: " + this.cognom + " {" +
-                "\n\t," + this.telefon.toString() + 
-                "\n\t," + this.portatil.toString() +
-                "\n\t," + this.televisor.toString() + "\n} Preu Total: " + this.calculaPreuTotal();
+        return "Client {" + "Nom: " + this.nom + ", Cognom: " + this.cognom + " {"
+                + "\n\t," + this.telefon.toString()
+                + "\n\t," + this.portatil.toString()
+                + "\n\t," + this.televisor.toString() + "\n} Preu Total: " + this.calculaPreuTotal();
     }
-    
-    
+
 }
