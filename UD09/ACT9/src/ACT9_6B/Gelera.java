@@ -14,6 +14,6 @@ public class Gelera extends Electrodomestic{
     
     @Override
     public String toString(){
-        return super.toString();
+        return "Gelera {" + super.toString() + "Suplement: " + calculaSuplement() + "Preu Final: " + (getPreu() + calculaSuplement());
     }
 }

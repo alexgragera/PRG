@@ -1,52 +1,45 @@
 package ACT9_6B;
 
 import ACT9_6A.*;
+import java.util.ArrayList;
 
 /**
  *
  * @author winadmin
  */
 public class Client {
+
     private String nom;
     private String cognom;
-    private Telefon telefon;
-    private Portatil portatil;
-    private Televisor televisor;
+    private ArrayList<Producte> productes;
 
-    public Client(String nom, String cognom, Telefon telefon, Portatil portatil, Televisor televisor) {
+    public Client(String nom, String cognom, ArrayList<Producte> productes) {
         this.nom = nom;
         this.cognom = cognom;
-        this.telefon = telefon;
-        this.portatil = portatil;
-        this.televisor = televisor;
+        this.productes = productes;
     }
 
     // Mètode per calcular el descompte total
     public double calculaPreuTotal() {
-        double preuTotal = 0.0;
-
-        if (telefon != null) {
-            preuTotal += telefon.getPreu() - telefon.calculaDescompte();
+        double preu = 0.0;
+        for (Producte p : productes) {
+            if (p instanceof Electronic) {
+                preu += p.getPreu() - ((Electronic) p).calculaDescompte();
+            } else if (p instanceof Electrodomestic) {
+                preu += p.getPreu() + ((Electrodomestic) p).calculaSuplement();
+            }
         }
-
-        if (portatil != null) {
-            preuTotal += portatil.getPreu() - portatil.calculaDescompte();
-        }
-
-        if (televisor != null) {
-            preuTotal += televisor.getPreu() - televisor.calculaDescompte();
-        }
-
-        return preuTotal;
+        return preu;
     }
 
     @Override
     public String toString() {
-        return "Client {" + "Nom: " + this.nom + ", Cognom: " + this.cognom + " {" +
-                "\n\t," + this.telefon.toString() + 
-                "\n\t," + this.portatil.toString() +
-                "\n\t," + this.televisor.toString() + "\n} Preu Total: " + this.calculaPreuTotal();
+        String text = "Client {" + "Nom: " + this.nom + ", Cognom: " + this.cognom + " {";
+        for (Producte p : productes) {
+            text += "\n\t" + p.toString();
+        }
+        text += "\n\t" + "Preu total: " + calculaPreuTotal();
+        return text;
     }
-    
-    
+
 }
