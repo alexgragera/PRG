@@ -24,6 +24,11 @@ public class Dia {
     public LocalDate getFecha() {
         return fecha;
     }
+
+    public Queue<String> getTareas() {
+        return tareas;
+    }
+    
     
     
 }
